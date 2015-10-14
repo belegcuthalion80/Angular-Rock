@@ -4,9 +4,10 @@ angular.module('appRock.view1', ['ngRoute'])
 
 
 
-.controller('RollingController', ['$scope','TrustSrc',function($scope,TrustSrc) {
+.controller('RollingController', ['$rootScope','$scope','TrustSrc','MetaService',function($rootScope,$scope,TrustSrc,MetaService) {
 
 	console.log("Rolling");
+	$rootScope.metaservice = MetaService;
 	$scope.parametros =
 		{
 			banda:"Rolling",
@@ -18,15 +19,18 @@ angular.module('appRock.view1', ['ngRoute'])
 			"los apoyaron en sus primeros ensayos, mientras que los bateristas Tony Chapman y"+ 
 			"Carlo Little3 tocaron en sus primeras actuaciones."
 		};
+		$rootScope.metaservice.set("Rolling Stones",$scope.parametros.texto,"Rolling Stones Jagger");
+	
 		$scope.trustSrc = function(src) {
     		return TrustSrc.traslate(src);
     
   		}
 
 }])
-.controller('BeatlesController', ['$scope','TrustSrc',function($scope,TrustSrc) {
+.controller('BeatlesController', ['$rootScope','$scope','TrustSrc','MetaService',function($rootScope,$scope,TrustSrc,MetaService) {
 
 	console.log("Beatles");
+	$rootScope.metaservice = MetaService;
 	$scope.parametros=
 		{
 			banda:"Beatles",
@@ -45,15 +49,19 @@ angular.module('appRock.view1', ['ngRoute'])
 			"más sofisticadas. Llegaron a ser percibidos como la encarnación de los ideales progresistas, "+
 			"extendiendo su influencia en las revoluciones sociales y culturales de la década de 1960."
 		};
+		$rootScope.metaservice.set("Beatles",$scope.parametros.texto,"McCartney Lennon Ringo George Harrison");
+	
 	$scope.trustSrc = function(src) {
     	return TrustSrc.traslate(src);
     
   	}
 
 }])
-.controller('QueenController', ['$scope','TrustSrc',function($scope,TrustSrc) {
+.controller('QueenController', ['$rootScope','$scope','TrustSrc','MetaService',function($rootScope,$scope,TrustSrc,MetaService) {
 
 	console.log("Queen");
+	$rootScope.metaservice = MetaService;
+	
 	$scope.parametros=
 		{
 			banda:"Queen",
@@ -66,11 +74,21 @@ angular.module('appRock.view1', ['ngRoute'])
 			"los integrantes restantes, Brian May y Roger Taylor, continúan trabajando bajo"+
 			" el nombre Queen, por lo que la banda aún es considerada activa.4 "
 		};
+	$rootScope.metaservice.set("Queen",$scope.parametros.texto,"Queen Freddie Mercury");
 	
 	$scope.trustSrc = function(src) {
     	return TrustSrc.traslate(src);
-  
+    
   	}
+
+	
+}])
+.controller('Metatroller', ['$scope','$rootScope','MetaService',function($rootScope,$scope,MetaService) {
+
+	console.log("Meta");
+	$rootSCope.metaservice = MetaService;
+		
+	
 	
 }])
 ;

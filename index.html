@@ -6,8 +6,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>APP Rock XX</title>
-  <meta name="description" content="">
+  <title ng-bind="metaservice.metaTitle()">Angular Rocks</title>
+  <meta name="description" content="{{metaservice.metaDescription()}}"/>
+  <meta name="keyword" content="{{metaservice.metaKeywords()}}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha256-ZgJYmqb5jZ8WCDqIYHlUarCVI7NDkBCeFnMW1gfihwY= sha512-yK8VlGnQXDlAH4aaZwd0EfmkYwv/XwZaA7VcT9JDO1YeZSvzu94p7/btLABkerIR26o7uYIiEmY59gQv/w/itA==" crossorigin="anonymous">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
